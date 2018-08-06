@@ -20,6 +20,7 @@ export class CharactersComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  	//console.log("Character component running!");
   }
 
   createEvents(): string[]{

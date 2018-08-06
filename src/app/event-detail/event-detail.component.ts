@@ -11,17 +11,19 @@ export class EventDetailComponent implements OnInit {
 
   id: string;
   event: Event;
-  test: string;
 
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
-  	this.id = 'event1',
-  	this.getEvent
+  	this.id = 'Event1';
+  	this.getEvent();
+    //console.log("Event-detail component running!");
   };
 
   getEvent(): void{
-  	this.eventService.getEvent(this.id).subscribe((data: Event) => this.event = data)
+    //console.log("getEvent started!");
+  	this.eventService.getEvent(this.id).subscribe((data: Event) => this.event = data);
+    //console.log("getEvent finished!");
   	//this.eventService.getEvent(this.id).subscribe((data: Event) => this.event = data);
   };
 
