@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Event } from '../event';
 import { EventService } from '../event.service';
 
+
 @Component({
   selector: 'app-event-detail',
   templateUrl: './event-detail.component.html',
@@ -23,6 +24,7 @@ export class EventDetailComponent implements OnInit {
   getEvent(): void{
     //console.log("getEvent started!");
   	this.eventService.getEvent(this.id).subscribe((data: Event) => this.event = data);
+  	this.eventService.getEventText(this.id).subscribe((data: string) => this.event.eventText = data);
     //console.log("getEvent finished!");
   	//this.eventService.getEvent(this.id).subscribe((data: Event) => this.event = data);
   };

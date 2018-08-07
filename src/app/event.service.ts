@@ -13,4 +13,10 @@ export class EventService {
   getEvent(id: string){
   	return this.http.get('./assets/Events/' + id + "/" + id + '.json');
   }
+  getEventText(id: string){
+  	
+  	return this.http.get('./assets/Events/' + id + "/" + id + '_text.txt', {
+  		responseType: 'text'
+  	});
+  }
 }
