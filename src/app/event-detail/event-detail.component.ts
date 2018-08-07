@@ -16,7 +16,7 @@ export class EventDetailComponent implements OnInit {
   constructor(private eventService: EventService) { }
 
   ngOnInit() {
-  	this.id = 'Event1';
+  	this.id = 'event1';
   	this.getEvent();
     //console.log("Event-detail component running!");
   };
