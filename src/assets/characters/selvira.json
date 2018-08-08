@@ -1,0 +1,9 @@
+{
+	"id": 1,
+	"name": "Selvira",
+	"class": "Fighter",
+	"race": "Elf",
+	"faction": "The Legendary Knights",
+	"background": "A former hero of Etheliond and the legendary knight of Earth",
+	"events": "event1"
+}

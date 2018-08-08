@@ -7,15 +7,9 @@ import { Character } from '../character';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
-	character: Character = {
-		id: 1,
-		name: 'Charles Caballero',
-		class: 'Cavalier',
-		race: 'Human',
-		faction: 'Legendary Knights',
-		background: 'Insert background story here!',
-		events: this.createEvents()
-	}
+	//character: Character;
+	//characterList: Character[];
+
 
   constructor() { }
 
@@ -23,7 +17,13 @@ export class CharactersComponent implements OnInit {
   	//console.log("Character component running!");
   }
 
-  createEvents(): string[]{
+  /*createEvents(): string[]{
   	return new Array("Event1", "Event2", "Event3", "Event4")
-  }
+  }*/
+  /*getCharacterList(): void{
+  	const characterFolder = './assets/characters';
+
+  	characterFolder
+  	this.characterList.push()
+  }*/
 }
