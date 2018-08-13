@@ -8,13 +8,15 @@ import { CharacterService } from '../character.service';
   styleUrls: ['./character-detail.component.css']
 })
 export class CharacterDetailComponent implements OnInit {
-	   character: Character;
+	   @Input() characterName: string
+     character: Character;
 	   id: string;
 
   constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
-  this.id = "selvira";
+    console.log("Character name is " + this.characterName);
+  this.id = this.characterName;
   this.getCharacter();
   }
 

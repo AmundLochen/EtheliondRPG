@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../character';
+import { CHARACTERS } from '../characterlist';
 
 @Component({
   selector: 'app-characters',
@@ -7,14 +8,16 @@ import { Character } from '../character';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
-	//character: Character;
-	//characterList: Character[];
-
+	characters = CHARACTERS;
+  selectedCharacter: string;
 
   constructor() { }
 
   ngOnInit() {
   	//console.log("Character component running!");
+  }
+  onSelect(character: string): void {
+    this.selectedCharacter = character;
   }
 
   /*createEvents(): string[]{
@@ -27,3 +30,4 @@ export class CharactersComponent implements OnInit {
   	this.characterList.push()
   }*/
 }
+

@@ -11,6 +11,6 @@ export class CharacterService {
   constructor(private http: HttpClient) { }
 
   getCharacter(id: string){
-  	return this.http.get('./assets/characters/profiles/' + id + '.json');
+  	return this.http.get('./assets/characters/profiles/' + id.toLowerCase() + '.json');
   }
 }
