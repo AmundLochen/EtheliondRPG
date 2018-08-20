@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
 import { Character } from '../character';
 import { CharacterService } from '../character.service';
 
@@ -18,6 +18,13 @@ export class CharacterDetailComponent implements OnInit {
     console.log("Character name is " + this.characterName);
   this.id = this.characterName;
   this.getCharacter();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    const characterName: SimpleChange = changes.characterName;
+    this.id = characterName.currentValue;
+    this.getCharacter();
+
   }
 
   getCharacter(){

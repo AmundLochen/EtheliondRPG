@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Character } from '../character';
 import { CHARACTERS } from '../characterlist';
 
+
 @Component({
   selector: 'app-characters',
   templateUrl: './characters.component.html',
@@ -17,7 +18,9 @@ export class CharactersComponent implements OnInit {
   	//console.log("Character component running!");
   }
   onSelect(character: string): void {
+    console.log("Selecting a character works");
     this.selectedCharacter = character;
+    console.log(this.selectedCharacter);
   }
 
   /*createEvents(): string[]{
