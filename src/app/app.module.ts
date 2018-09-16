@@ -7,13 +7,19 @@ import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+import { EventsComponent } from './events/events.component';
+import { SessionsComponent } from './sessions/sessions.component';
+import { SessionDetailComponent } from './session-detail/session-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharactersComponent,
     CharacterDetailComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    EventsComponent,
+    SessionsComponent,
+    SessionDetailComponent
   ],
   imports: [
     BrowserModule,
