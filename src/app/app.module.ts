@@ -10,6 +10,8 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
 import { EventsComponent } from './events/events.component';
 import { SessionsComponent } from './sessions/sessions.component';
 import { SessionDetailComponent } from './session-detail/session-detail.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { SessionDetailComponent } from './session-detail/session-detail.componen
     EventDetailComponent,
     EventsComponent,
     SessionsComponent,
-    SessionDetailComponent
+    SessionDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
