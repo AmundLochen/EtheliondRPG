@@ -10,12 +10,12 @@ export class EventService {
 
   constructor(private http: HttpClient) { }
 
-  getEvent(id: string){
-  	return this.http.get('./assets/events/' + id + "/" + id + '.json');
+  getEvent(id: number){
+  	return this.http.get('./assets/events/event' + id + "/event" + id + '.json');
   }
-  getEventText(id: string){
+  getEventText(id: number){
   	
-  	return this.http.get('./assets/events/' + id + "/" + id + '_text.txt', {
+  	return this.http.get('./assets/events/event' + id + "/event" + id + '_text.txt', {
   		responseType: 'text'
 
   	});
