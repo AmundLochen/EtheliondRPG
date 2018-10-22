@@ -5,5 +5,5 @@
 	"race": "Human",
 	"faction": "The Legendary Knights",
 	"background": "The legendary hero of Etheliond and the legendary knight of wind",
-	"events": "2"
+	"events": ["2"]
 }

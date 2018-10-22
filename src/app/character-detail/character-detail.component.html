@@ -4,5 +4,9 @@
 	<div><span>{{character.race}}</span></div>
 	<div><span>{{character.faction}}</span></div>
 	<div><span>{{character.background}}</span></div>
-	
+	<div><span><p>Events:</p>
+		<li *ngFor="let event of character.events">
+			<a routerLink="../event/{{event}}">{{event}}</a>
+		</li>
+	</span></div>
 <div>
