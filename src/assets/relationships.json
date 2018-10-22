@@ -1,0 +1,12 @@
+{
+	"eventRelations":[
+						{
+							"event": 1,
+							"character": [1]
+						},
+						{
+							"event": 2,
+							"character": []
+						}
+					]
+}

@@ -8,21 +8,21 @@ import { CharacterService } from '../character.service';
   styleUrls: ['./character-detail.component.css']
 })
 export class CharacterDetailComponent implements OnInit {
-	   @Input() characterName: string
+	   @Input() thisCharacter: Character
      character: Character;
-	   id: string;
+	   id: number;
 
   constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
-    console.log("Character name is " + this.characterName);
-  this.id = this.characterName;
+    console.log("Character name is " + this.thisCharacter.name + " " + this.thisCharacter.id.toString());
+  this.id = this.thisCharacter.id;
   this.getCharacter();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    const characterName: SimpleChange = changes.characterName;
-    this.id = characterName.currentValue;
+    console.log("OnChanges run")
+    this.id = this.thisCharacter.id;
     this.getCharacter();
 
   }

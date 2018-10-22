@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Character } from './character';
+import { CharacterListObject } from './characterListObject';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,11 @@ export class CharacterService {
 
   constructor(private http: HttpClient) { }
 
-  getCharacter(id: string){
-  	return this.http.get('./assets/characters/profiles/' + id.toLowerCase() + '.json');
+  getCharacter(id: number){
+  	return this.http.get('./assets/characters/' + (id).toString() + '/profile.json');
+  }
+  getCharacters(): Observable<CharacterListObject[]>{
+
+  	return this.http.get<CharacterListObject[]>('./assets/characters/characterlist.json');
   }
 }

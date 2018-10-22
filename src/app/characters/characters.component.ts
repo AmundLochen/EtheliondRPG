@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../character';
-import { CHARACTERS } from '../characterlist';
+import { CharacterService } from '../character.service';
+import {CharacterListObject} from '../characterListObject';
 
 
 @Component({
@@ -9,28 +10,27 @@ import { CHARACTERS } from '../characterlist';
   styleUrls: ['./characters.component.css']
 })
 export class CharactersComponent implements OnInit {
-	characters = CHARACTERS;
-  selectedCharacter: string;
+  characterList: CharacterListObject[];
+  selectedCharacter: CharacterListObject;
 
-  constructor() { }
+  constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
+    console.log("Does this run?");
+    this.getCharacters();
   	//console.log("Character component running!");
   }
-  onSelect(character: string): void {
+  onSelect(character: CharacterListObject): void {
     console.log("Selecting a character works");
     this.selectedCharacter = character;
-    console.log(this.selectedCharacter);
+    console.log(this.selectedCharacter.name);
   }
 
   /*createEvents(): string[]{
   	return new Array("Event1", "Event2", "Event3", "Event4")
   }*/
-  /*getCharacterList(): void{
-  	const characterFolder = './assets/characters';
-
-  	characterFolder
-  	this.characterList.push()
-  }*/
+  getCharacters(): void{
+    console.log("Test");
+  	this.characterService.getCharacters().subscribe(characterList => this.characterList = characterList);  
+  }
 }
-
