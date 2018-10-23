@@ -4,6 +4,7 @@ import { CharacterListObject } from '../characterListObject';
 import { CharacterService } from '../character.service';
 import { EventService } from '../event.service';
 import { Event } from '../event';
+import { take, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-character-detail',
@@ -28,7 +29,17 @@ export class CharacterDetailComponent implements OnInit {
   }
 
   getCharacter(){
-  	this.characterService.getCharacter(this.characterListObject.id).subscribe((data: Character) => this.character = data);
+  	this.characterService.getCharacter(this.characterListObject.id).subscribe((data: Character) => 
+      { this.character = data;
+        let testMap = new Map();
+        for(let eventID of this.character.events){
+           testMap.set(eventID, this.getEventTitle(parseInt(eventID)));
+           console.log(testMap.get(eventID));
+        }
+        this.map = testMap;
+        console.log(this.character.name);
+     });
+
     /*for(let eventID of this.character.events)
     {
       //console.log(eventID);
