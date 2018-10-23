@@ -16,21 +16,21 @@ export class CharactersComponent implements OnInit {
   constructor(private characterService: CharacterService) { }
 
   ngOnInit() {
-    console.log("Does this run?");
+    //console.log("Does this run?");
     this.getCharacters();
   	//console.log("Character component running!");
   }
   onSelect(character: CharacterListObject): void {
-    console.log("Selecting a character works");
+    //console.log("Selecting a character works");
     this.selectedCharacter = character;
-    console.log(this.selectedCharacter.name);
+    //console.log(this.selectedCharacter.name);
   }
 
   /*createEvents(): string[]{
   	return new Array("Event1", "Event2", "Event3", "Event4")
   }*/
   getCharacters(): void{
-    console.log("Test");
+    //console.log("Test");
   	this.characterService.getCharacters().subscribe(characterList => this.characterList = characterList);  
   }
 }

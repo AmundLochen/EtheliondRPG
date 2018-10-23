@@ -5,5 +5,6 @@ export class Character {
 	race: string;
 	faction: string;
 	background: string;
-	events: string;
+	image: string;
+	events: string[];
 }
