@@ -31,6 +31,6 @@ export class CharactersComponent implements OnInit {
   }*/
   getCharacters(): void{
     //console.log("Test");
-  	this.characterService.getCharacters().subscribe(characterList => this.characterList = characterList);  
+  	this.characterService.getCharacters().subscribe(characterList => this.characterList = characterList.sort((a, b) => {return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)}));  
   }
 }
