@@ -4,10 +4,10 @@
 	<div><span>{{character.race}}</span></div>
 	<div><span>{{character.faction}}</span></div>
 	<div><span>{{character.background}}</span></div>
-	<img src="./assets/characters/{{character.id}}/{{character.image}}.jpg"/>
+	<img src="./assets/characters/{{character.id}}/{{character.image}}.jpg" height="720" width="480"/>
 	<div><span><p>Events:</p>
 		<li *ngFor="let eventID of character.events">
-			<a routerLink="../event/{{eventID}}">{{eventID}}</a>
+			<a routerLink="../event/{{eventID}}">{{map.get(eventID)}}</a>
 		</li>
 	</span></div>
 <div>

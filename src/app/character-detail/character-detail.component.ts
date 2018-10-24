@@ -4,7 +4,6 @@ import { CharacterListObject } from '../characterListObject';
 import { CharacterService } from '../character.service';
 import { EventService } from '../event.service';
 import { Event } from '../event';
-import { take, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-character-detail',
@@ -14,42 +13,35 @@ import { take, map } from 'rxjs/operators';
 export class CharacterDetailComponent implements OnInit {
 	   @Input() characterListObject: CharacterListObject
      character: Character;
-     map: Map<string, string>;
+     map: Map<string, string> = new Map<string,string>();
 
   constructor(private characterService: CharacterService, private eventService: EventService) { }
 
   ngOnInit() {
-    //console.log("Character name is " + this.thisCharacter.name + " " + this.thisCharacter.id.toString());
     this.getCharacter();
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    //console.log("OnChanges run")
     this.getCharacter();
   }
 
   getCharacter(){
-  	this.characterService.getCharacter(this.characterListObject.id).subscribe((data: Character) => 
+  	if(this.map.size != 0) 
+      {
+        this.map.clear();
+      }
+    this.characterService.getCharacter(this.characterListObject.id).subscribe((data: Character) => 
       { this.character = data;
-        let testMap = new Map();
-        for(let eventID of this.character.events){
-           testMap.set(eventID, this.getEventTitle(parseInt(eventID)));
-           console.log(testMap.get(eventID));
+        for(let eventID of this.character.events)
+        {
+           this.eventService.getEvent(parseInt(eventID)).subscribe(
+             (data: Event) => 
+               { 
+                 this.map.set(eventID, data.name); 
+                 //console.log(this.map.get(eventID));
+               }
+             );
         }
-        this.map = testMap;
-        console.log(this.character.name);
      });
-
-    /*for(let eventID of this.character.events)
-    {
-      //console.log(eventID);
-      this.map.set(eventID, this.getEventTitle(parseInt(eventID)));
-    }*/
-  }
-
-  getEventTitle(id: number): string{
-    var returnValue;
-    this.eventService.getEvent(id).subscribe((data: Event) => returnValue = data.name);
-    return returnValue;
   }
 }
