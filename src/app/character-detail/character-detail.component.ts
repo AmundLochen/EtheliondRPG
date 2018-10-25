@@ -14,6 +14,7 @@ export class CharacterDetailComponent implements OnInit {
 	   @Input() characterListObject: CharacterListObject
      character: Character;
      map: Map<string, string> = new Map<string,string>();
+     sortedEventArray: string[];
 
   constructor(private characterService: CharacterService, private eventService: EventService) { }
 
@@ -32,16 +33,7 @@ export class CharacterDetailComponent implements OnInit {
       }
     this.characterService.getCharacter(this.characterListObject.id).subscribe((data: Character) => 
       { this.character = data;
-        for(let eventID of this.character.events)
-        {
-           this.eventService.getEvent(parseInt(eventID)).subscribe(
-             (data: Event) => 
-               { 
-                 this.map.set(eventID, data.name); 
-                 //console.log(this.map.get(eventID));
-               }
-             );
-        }
+        this.map = this.eventService.getEventTextMap(this.character.events);
      });
   }
 }

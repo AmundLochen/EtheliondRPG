@@ -17,7 +17,19 @@ export class EventService {
   	
   	return this.http.get('./assets/events/event' + id + "/event" + id + '_text.txt', {
   		responseType: 'text'
-
   	});
+  }
+  getEventTextMap(eventList: string[]): Map<string, string>{
+    let map = new Map<string, string>();
+    for(let eventID of eventList)
+        {
+           this.getEvent(parseInt(eventID)).subscribe(
+             (data: Event) => 
+               { 
+                 map.set(eventID, data.name); 
+               }
+             );
+        }
+        return map;
   }
 }
