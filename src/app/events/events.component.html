@@ -1,3 +1,7 @@
-<p>
-  events works!
-</p>
+<h2>Event list:</h2>
+
+<ul>
+	<li *ngFor="let event of eventList">
+		<a href="../event/{{event.id}}">{{event.name}}</a>
+	</li>
+</ul>
