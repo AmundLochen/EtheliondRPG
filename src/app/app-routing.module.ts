@@ -6,6 +6,7 @@ import { CharacterDetailComponent } from './character-detail/character-detail.co
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { EventsComponent } from './events/events.component';
 import { TimelineComponent } from './timeline/timeline.component';
+import { CampaignsComponent } from './campaigns/campaigns.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -14,7 +15,8 @@ const routes: Routes = [
 	{path: 'detail/:id', component: CharacterDetailComponent},
 	{path: 'event/:id', component: EventDetailComponent},
 	{path: 'events', component: EventsComponent},
-	{path: 'timeline', component: TimelineComponent}
+	{path: 'timeline', component: TimelineComponent},
+	{path: 'campaigns', component: CampaignsComponent}
 ];
 
 @NgModule({
