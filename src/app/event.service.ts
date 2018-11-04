@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Event } from './event';
+import { EventListObject } from './eventListObject';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,8 @@ export class EventService {
              );
         }
         return map;
+  }
+  getEventList(): Observable<EventListObject[]>{
+    return this.http.get<EventListObject[]>('./assets/events/eventlist.json');
   }
 }

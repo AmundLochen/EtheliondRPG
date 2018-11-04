@@ -2,5 +2,6 @@
 	"id": 2,
 	"name": "After the Battle",
 	"eventSummary": "Summarytext",
-	"eventText": "event2_text"
+	"eventText": "event2_text",
+	"eventSession": 0
 }

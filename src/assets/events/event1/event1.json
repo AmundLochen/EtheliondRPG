@@ -2,5 +2,6 @@
 	"id": 1,
 	"name": "Death of a Hero",
 	"eventSummary": "Summarytext",
-	"eventText": "event1_text"
+	"eventText": "event1_text",
+	"eventSession": 0
 }

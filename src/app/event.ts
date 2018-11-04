@@ -3,4 +3,5 @@ export class Event {
 	name: string;
 	eventSummary: string;
 	eventText: string;
+	eventSession: number;
 }
