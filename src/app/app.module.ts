@@ -14,6 +14,7 @@ import { SessionDetailComponent } from './session-detail/session-detail.componen
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     SessionsComponent,
     SessionDetailComponent,
     DashboardComponent,
-    NavbarComponent
+    NavbarComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

@@ -4,7 +4,8 @@ import { CharactersComponent } from './characters/characters.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
-import { EventsComponent } from './events/events.component'
+import { EventsComponent } from './events/events.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 const routes: Routes = [
 	{path: '', redirectTo: '/dashboard', pathMatch: 'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
 	{path: 'dashboard', component: DashboardComponent},
 	{path: 'detail/:id', component: CharacterDetailComponent},
 	{path: 'event/:id', component: EventDetailComponent},
-	{path: 'events', component: EventsComponent}
+	{path: 'events', component: EventsComponent},
+	{path: 'timeline', component: TimelineComponent}
 ];
 
 @NgModule({
